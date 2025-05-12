@@ -3,7 +3,6 @@ import openai from "@/lib/openai";
 import supabase from "@/lib/supabase";
 
 export async function POST(request) {
-  //    will be needed when new conversation is created will store the returned id then
   try {
     const { message, userId, conversationId } = await request.json();
     if (!message || !userId) {
@@ -16,39 +15,6 @@ export async function POST(request) {
     let convId = conversationId;
     console.log(convId, "convId inside api ");
 
-    // if (!convId) {
-    //   // No conversationId provided → create a new conversation
-    //   const { data, error: convError } = await supabase
-    //     .from("conversations")
-    //     .insert([
-    //       {
-    //         user_id: userId,
-    //         title: message.slice(0, 50) || "New conversation",
-    //       },
-    //     ])
-    //     .select("id") // Get the generated ID
-    //     .single();
-
-    //   if (convError) throw convError;
-    //   console.log(data, "data returned");
-    //   convId = data.id; // Use the returned ID
-    //   console.log(convId, "this is returned id");
-    // } else {
-    //   // ConversationId was provided → check if it exists (optional, for safety)
-    //   const { data: existingConv, error: checkError } = await supabase
-    //     .from("conversations")
-    //     .select("id")
-    //     .eq("id", convId)
-    //     .eq("user_id", userId) // ensure user owns it
-    //     .maybeSingle();
-    //   if (checkError) throw checkError;
-    //   if (!existingConv) {
-    //     throw new Error(
-    //       "Conversation not found or does not belong to this user."
-    //     );
-    //   }
-    // }
-    // ConversationId was provided → check if it exists (optional, for safety)
     const { data: existingConv, error: checkError } = await supabase
       .from("conversations")
       .select("id")
@@ -62,8 +28,7 @@ export async function POST(request) {
       );
     }
 
-    // Fetch last 20 messages for context
-    // commented for future use
+    // Fetching last 20 messages for context
     const { data: messageHistory, error: historyError } = await supabase
       .from("messages")
       .select("content, is_from_user, created_at")
@@ -98,13 +63,11 @@ export async function POST(request) {
         importance of reaching out to emergency services or a mental health crisis line.`,
     };
 
-    // commented for future use
     const formattedHistory = messageHistory.map((msg) => ({
       role: msg.is_from_user ? "user" : "system",
       content: msg.content,
     }));
 
-    // commented for future use
     const chatMessages = [
       systemMessage,
       ...formattedHistory,
@@ -112,30 +75,11 @@ export async function POST(request) {
     ];
     console.log(chatMessages, "these are chat messages");
 
-    // const chatMessages = [systemMessage, { role: "user", content: message }];
-
     const completion = await openai.chat.completions.create({
       model: "gpt-4-0125-preview",
       messages: chatMessages,
       temperature: 0.7,
     });
-    // Call OpenAI API
-    // format example
-    // const completion = await openai.chat.completions.create({
-    //   model: "gpt-4-0125-preview",
-    //   messages: [
-    //     {
-    //       role: "system",
-    //       content:
-    //         "You are a compassionate and supportive mental health chatbot.",
-    //     },
-    //     {
-    //       role: "user",
-    //       content: message,
-    //     },
-    //   ],
-    //   temperature: 0.7,
-    // });
 
     const aiResponse =
       completion.choices[0]?.message?.content ||
@@ -154,8 +98,6 @@ export async function POST(request) {
     console.log(aiResponse, "2.) Ai Response");
     console.log(aiMessage, "3.) Ai Message");
 
-    // Save AI response to Supabase
-    // commented for future use
     const { error: saveError } = await supabase.from("messages").insert([
       {
         content: aiResponse,
@@ -173,7 +115,7 @@ export async function POST(request) {
     } else {
       return NextResponse.json({
         success: true,
-        response: aiMessage, // sent back for frontend usage
+        response: aiMessage, 
         conversationId: convId,
       });
     }
