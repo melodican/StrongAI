@@ -11,7 +11,7 @@ import PageLoader from "./PageLoader";
 import Sidebar from "./Sidebar";
 import { useSidebar } from "@/contexts/SidebarContextProvider";
 
-export default function ChatInterface({ initialMessage }) {
+export default function ChatInterface() {
   const { session } = useAuth();
   const { isOpen } = useSidebar();
   const {
