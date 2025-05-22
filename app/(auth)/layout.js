@@ -9,9 +9,9 @@ const AuthLayout = ({ children }) => {
           <div className="container">
             <div className="login-copyright">
               <div>
-                <h4 className="text-base font-normal">
+                <p className="text-xs text-gray-600 mb-3 mb-0 font-normal">
                   © copyright 2025 Strong AI
-                </h4>
+                </p>
               </div>
             </div>
           </div>

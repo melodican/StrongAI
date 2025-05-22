@@ -57,7 +57,7 @@ export default function LoginPage() {
       <AuthFormTitleSection title={"Login !"} />
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white p-5 rounded-none shadow-lg w-full"
+        className="bg-white p-5 mt-4 rounded-none shadow-lg w-full"
       >
         <CommonTextInput
           fieldName={"email"}
@@ -126,7 +126,7 @@ export default function LoginPage() {
           text="Don't have an account? "
           linkText="Sign up"
           linkUrl={"/sign-up"}
-          className="primary-text-color text-[16px] font-bold text-center"
+          className="primary-text-color text-[14px] text-center"
         />
       </form>
     </div>

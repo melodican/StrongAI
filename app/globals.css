@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap');
 @import "tailwindcss";
+@import "react-phone-number-input/style.css";
 
 :root {
   --background: #ffffff;
@@ -19,11 +21,14 @@
     --foreground: #ededed;
   }
 }
+* {
+  font-family: "Nunito" !important;
+}
 
 body {
+  font-family: "Nunito" !important;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .chat-container {
@@ -251,4 +256,12 @@ body {
   100% {
     opacity: 0.2;
   }
+}
+
+.outline-none {
+  outline: none !important;
+}
+.input-outline-none input
+{
+  outline: none !important;
 }

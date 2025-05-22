@@ -38,7 +38,7 @@ const CommonButton = ({
     >
       {/* <span className="flex-none icon-back">{icon}</span> */}
       {loader && BUTTON_LOADER}
-      {text}
+      {loader ? "" : text}
     </button>
   );
 };

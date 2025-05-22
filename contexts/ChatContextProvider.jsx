@@ -29,13 +29,6 @@ const ChatContextProvider = ({ children }) => {
     fetchConversations();
   }, [conversationId, session?.user?.id]);
 
-  console.log("current items : ", {
-    userId: session?.user?.id,
-    conversationId: conversationId,
-    messages: messages,
-    conversations: conversations,
-  });
-
   const createUserMessage = (content, isFallbackMessage = false) => {
     const userMessage = {
       content: isFallbackMessage ? FALLBACK_MESSAGE : content,

@@ -3,7 +3,7 @@ import React from "react";
 import ErrorMessage from "./ErrorMessage";
 
 const DEFAULT_CLASS =
-  "px-4 py-3 bg-gray-100 focus:bg-transparent w-full text-sm outline-[#333] rounded-sm transition-all";
+  "px-4 py-3 bg-gray-100 w-full text-sm outline-none rounded-sm transition-all";
 
 const CommonTextInput = ({
   rules,
@@ -27,7 +27,7 @@ const CommonTextInput = ({
     setValue,
   } = formConfig;
   return (
-    <div>
+    <div className="mb-2">
       <div className="label">
         {label} {showAsterisk ? <span className="required"> *</span> : ""}
       </div>
@@ -46,8 +46,8 @@ const CommonTextInput = ({
             disabled={disabled}
             className={
               disabled
-                ? `${className} mb-2  cursor-not-allowed`
-                : `${className} mb-2`
+                ? `${className} cursor-not-allowed`
+                : `${className}`
             }
             maxLength={maxLength}
           />
@@ -68,15 +68,15 @@ const CommonTextInput = ({
             disabled={disabled}
             className={
               disabled
-                ? `${className} mb-2  cursor-not-allowed`
-                : `${className} mb-2`
+                ? `${className} cursor-not-allowed`
+                : `${className}`
             }
             maxLength={maxLength}
           />
         )}
 
         <div
-          className="absolute bottom-[22px] right-[17px] cursor-pointer"
+          className="absolute top-1/2 -translate-y-1/2 right-[17px] cursor-pointer"
           onClick={onIconClick}
         >
           {icon}

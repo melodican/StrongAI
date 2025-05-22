@@ -9,7 +9,7 @@ const AuthFormTitleSection = ({ title }) => {
         <Image src={"/images/logo.png"} width={100} height={100} alt="logo" />
       </div>
       <div className="md:text-[14px]">
-        <h2 className="text-center text-[27px] font-bold mt-2">{title}</h2>
+        <h2 className="text-center text-[24px] font-bold mt-2">{title}</h2>
       </div>
     </div>
   );

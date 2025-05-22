@@ -48,9 +48,18 @@ const AuthContextProvider = ({ children }) => {
 
   const signUpNewUser = async (payload) => {
     try {
-      const { data, error } = await supabase.auth.signUp(payload, {
+      const { email, password, phone, first_name, last_name } = payload;
+
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
         options: {
-          redirectTo: "http://localhost:3000/sign-in",
+          redirectTo: "http://44.215.99.26/sign-in",
+          data: {
+            phone,
+            first_name,
+            last_name,
+          },
         },
       });
 
