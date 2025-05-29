@@ -57,7 +57,7 @@ export default function LoginPage() {
       <AuthFormTitleSection title={"Login !"} />
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white p-5 mt-4 rounded-none shadow-lg w-full"
+        className="bg-white p-5 mt-4 rounded-none shadow-lg w-full text-black"
       >
         <CommonTextInput
           fieldName={"email"}

@@ -120,7 +120,7 @@ export default function Sidebar() {
                   {conversations?.length ? (
                     <button
                       onClick={handleNewChat}
-                      className="cursor-pointer text-muted-foreground hover:text-black text-lg"
+                      className="cursor-pointer text-muted-foreground hover:text-black text-lg text-black"
                       title="New Chat"
                     >
                       <Plus size={20} />
@@ -129,7 +129,7 @@ export default function Sidebar() {
 
                   <button
                     onClick={toggleSidebar}
-                    className="cursor-pointer text-muted-foreground hover:text-black text-lg"
+                    className="cursor-pointer text-muted-foreground hover:text-black text-lg text-black"
                     title="Close Sidebar"
                   >
                     <X size={20} />
@@ -157,14 +157,14 @@ export default function Sidebar() {
                   .filter(([, items]) => items.length > 0)
                   .map(([group, items]) => (
                     <div key={group} className="mb-6">
-                      <p className="capitalize text-xs font-semibold text-muted-foreground mb-2">
+                      <p className="capitalize text-xs font-extrabold text-muted-foreground mb-2 text-black ">
                         {groupLabels[group] || group}
                       </p>
                       <ul className="space-y-1">
                         {items.map((conv) => (
                           <li
                             key={conv?.id}
-                            className={`px-3 py-2 rounded-md flex justify-between items-center cursor-pointer hover:bg-gray-100 ${
+                            className={`px-3 py-2 rounded-md flex justify-between items-center cursor-pointer hover:bg-gray-100 text-gray-600 ${
                               conversationId === conv?.id
                                 ? "bg-gray-200 font-medium"
                                 : ""

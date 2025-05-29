@@ -26,10 +26,10 @@ export default function TypingIndicator() {
       </div>
 
       <div className="max-w-[85%] md:max-w-[70%]">
-        <div className="mb-1 ml-1 text-xs text-muted-foreground">Mia</div>
+        <div className="mb-1 ml-1 text-xs text-muted-foreground text-black">Mia</div>
 
         <div
-          className="px-4 py-3 rounded-2xl text-sm bg-muted rounded-tl-none"
+          className="px-4 py-3 rounded-2xl text-sm bg-muted rounded-tl-none text-black"
           style={{ background: "#f5f5f5" }}
         >
           <div className="flex space-x-1 items-center">
@@ -64,7 +64,7 @@ export default function TypingIndicator() {
           </div>
         </div>
 
-        <div className="text-xs text-muted-foreground mt-1 ml-1">typing...</div>
+        <div className="text-xs text-muted-foreground mt-1 ml-1 !text-gray-600 ">typing...</div>
       </div>
     </motion.div>
   );

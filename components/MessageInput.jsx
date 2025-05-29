@@ -35,7 +35,7 @@ export default function MessageInput({ onSendMessage, isTyping }) {
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Type your message..."
-          className="overflow-auto w-full py-3 px-4 pr-12 bg-card rounded-full border border-[#e5e5e5] focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all resize-none max-h-32 h-[48px] hide-scrollbar"
+          className="overflow-auto w-full py-3 px-4 pr-12 bg-card rounded-full border border-[#e5e5e5] focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all resize-none max-h-32 h-[48px] hide-scrollbar placeholder-gray-600 text-black"
           disabled={isTyping}
           rows={5}
         />
@@ -49,7 +49,7 @@ export default function MessageInput({ onSendMessage, isTyping }) {
         </button>
       </form>
 
-      <p className="text-xs text-muted-foreground text-center mt-2">
+      <p className="text-xs text-muted-foreground text-center mt-2 text-gray-600">
         Not a substitute for professional mental health care
       </p>
     </motion.div>

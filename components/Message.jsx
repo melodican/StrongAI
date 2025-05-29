@@ -37,22 +37,22 @@ export default function Message({ message, isSequential }) {
         }`}
       >
         {!isSequential && !is_from_user && (
-          <div className="mb-1 ml-1 text-xs text-muted-foreground">Mia</div>
+          <div className="mb-1 ml-1 text-xs text-muted-foreground text-black">Mia</div>
         )}
 
         <div
           className={`px-4 py-3 rounded-2xl text-sm ${
             !is_from_user
-              ? "bg-muted rounded-tl-none"
+              ? "bg-muted text-black rounded-tl-none"
               : "bg-black text-white rounded-tr-none"
           }`}
-          style={!is_from_user ? { background: "#f5f5f5" } : {}}
+          style={!is_from_user ? { background: "#c3c3c3bd" } : {}}
         >
           <div className="whitespace-pre-line">{content}</div>
         </div>
 
         <div
-          className={`text-xs text-muted-foreground mt-1 ${
+          className={`text-xs text-muted-foreground mt-1 !text-gray-600 ${
             !is_from_user ? "text-right mr-1" : "ml-1"
           }`}
         >

@@ -87,7 +87,7 @@ const page = () => {
         <AuthFormTitleSection title={"Sign Up !"} />
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="bg-white p-5 mt-4 rounded-none shadow-lg w-full"
+          className="bg-white p-5 mt-4 rounded-none shadow-lg w-full text-black"
         >
           <div className="grid grid-cols-2 gap-3">
             <CommonTextInput

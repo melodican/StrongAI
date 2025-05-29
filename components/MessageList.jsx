@@ -45,10 +45,10 @@ export default function MessageList({ messages, isTyping, messagesEndRef }) {
             </div>
           </div>
 
-          <h2 className="text-[34px] font-bold text-primary mb-3">
+          <h2 className="text-[34px] font-bold text-primary mb-3 text-black">
             What's on your mind?{" "}
           </h2>
-          <p className="text-muted-foreground mb-4">
+          <p className="text-muted-foreground mb-4 !text-gray-600">
             Type below and let's talk about it
           </p>
         </motion.div>

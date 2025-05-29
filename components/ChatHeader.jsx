@@ -44,7 +44,7 @@ export default function ChatHeader() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-10 backdrop-blur-md bg-background/80 border-[#e5e5e5] border-border"
+      className="sticky top-0 z-10 backdrop-blur-md bg-background/80 border-[#e5e5e5] border-border !bg-white"
       style={{
         height: "64px",
         border: "2px solid rgb(229, 229, 229)",
@@ -57,7 +57,7 @@ export default function ChatHeader() {
     >
       <div className="max-w-[85%] w-full mx-auto px-4 py-3 flex items-center justify-between">
         {!isOpen && (
-          <button style={{ cursor: "pointer" }} onClick={() => setIsOpen(true)}>
+          <button className="text-black" style={{ cursor: "pointer" }} onClick={() => setIsOpen(true)}>
             <Menu size={24} />
           </button>
         )}
@@ -71,7 +71,7 @@ export default function ChatHeader() {
               variant="ghost"
               size="icon"
               onClick={handleSignOut}
-              className="rounded-full cursor-pointer"
+              className="rounded-full cursor-pointer text-black"
             >
               <LogOut size={18} />
             </button>
