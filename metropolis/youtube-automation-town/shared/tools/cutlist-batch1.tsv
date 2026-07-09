@@ -1,0 +1,19 @@
+# Dossier -> Shorts cutlist  (TAB-separated: START <TAB> END <TAB> BANNER <TAB> OUTNAME)
+# ---------------------------------------------------------------------------------
+# One row = one Short. START/END accept SS, MM:SS or HH:MM:SS.
+# Each Short is cut from ONE source video, so run the script once PER source video:
+#   ./dossier-to-shorts.sh "https://youtu.be/VIDEO_ID" this-file.tsv shorts_out
+# Fill in the real START/END timestamps by scrubbing the source for the hook moment.
+# Delete rows that don't belong to the source you're currently running.
+#
+# START		END		BANNER			OUTNAME
+00:00:00	00:00:40	THEY NOTICED THIS	snipers-hook
+00:00:00	00:00:40	WHY THEY STOPPED	flak-crews-hook
+00:00:00	00:00:40	THEY ATE THIS?		rations-hook
+00:00:00	00:00:40	ALL THIS?		tankers-hook
+00:00:00	00:00:40	THEY RAN WEST		fled-west-hook
+00:00:00	00:00:40	THEY REFUSED		pilots-hook
+00:00:00	00:00:40	ALL AT ONCE		artillery-hook
+00:00:00	00:00:40	IT NEVER LEFT THEM	haunted-hook
+00:00:00	00:00:40	NIGHTMARE IN THE DARK	night-patrols-hook
+00:00:00	00:00:40	JUST A JEEP?		jeep-hook

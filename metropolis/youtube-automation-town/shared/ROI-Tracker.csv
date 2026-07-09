@@ -1,0 +1,8 @@
+Date,Channel,Video Title,Cost (GBP),Views,RPM (GBP),Revenue (GBP),Profit (GBP),Monetised?,Notes
+2026-06-20,War Dossier,Germans Feared This Tank,20,0,4.10,=E2*F2/1000,=G2-D2,No,Pre-monetisation = pure runway
+2026-06-21,War Dossier,The Deadly Secret of American Artillery,20,0,4.10,=E3*F3/1000,=G3-D3,No,
+2026-06-22,What Actually Is,Example finance video,10,0,7.90,=E4*F4/1000,=G4-D4,No,
+,,,,,,,,,
+SUMMARY,,,,,,,,,
+War Dossier total,,,=SUMIF(B2:B4\,"War Dossier"\,D2:D4),=SUMIF(B2:B4\,"War Dossier"\,E2:E4),,=SUMIF(B2:B4\,"War Dossier"\,G2:G4),=SUMIF(B2:B4\,"War Dossier"\,H2:H4),,Net profit so far
+What Actually Is total,,,=SUMIF(B2:B4\,"What Actually Is"\,D2:D4),=SUMIF(B2:B4\,"What Actually Is"\,E2:E4),,=SUMIF(B2:B4\,"What Actually Is"\,G2:G4),=SUMIF(B2:B4\,"What Actually Is"\,H2:H4),,Net profit so far
